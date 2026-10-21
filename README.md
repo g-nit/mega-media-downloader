@@ -1,3 +1,15 @@
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white)](https://www.google.com/chrome/)
+[![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/g-nit/mega-media-downloader?label=Latest%20Release)](https://github.com/g-nit/mega-media-downloader/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/g-nit/mega-media-downloader/total?label=Downloads)](https://github.com/g-nit/mega-media-downloader/releases)
+
+
 # MEGA Media Downloader
 
 A Chrome extension for downloading files and folders from MEGA directly to your Windows PC or Synology NAS.
