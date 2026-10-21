@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEGA Downloader Settings</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="brand"><div class="logo">M</div><div><h1>Downloader settings</h1><p>Configure local and Synology destinations</p></div></div></header>
+<main><section class="panel">
+<h2>Windows folders</h2>
+<label for="moviesWindows">Movies folder</label><input id="moviesWindows" placeholder="Choose your Movies folder path">
+<div style="height:12px"></div><label for="tvWindows">TV Shows folder</label><input id="tvWindows" placeholder="Choose your TV Shows folder path">
+<div style="height:20px"></div><h2>Synology NAS (SMB share)</h2>
+<label for="moviesNas">NAS Movies path</label><input id="moviesNas" placeholder="\\\\your-nas\\share\\Movies">
+<div style="height:12px"></div><label for="tvNas">NAS TV Shows path</label><input id="tvNas" placeholder="\\\\your-nas\\share\\TV Shows">
+<div style="height:20px"></div><h2>Megatools</h2>
+<label for="megadlPath">Path to megatools executable</label><input id="megadlPath" placeholder="megatools.exe or C:\\Tools\\megatools\\megatools.exe">
+<p class="hint">Enter your own paths. Local folders, external drives, and accessible SMB/UNC shares are supported. NAS paths must use your own NAS name, share, and folder.</p>
+<p class="hint">The default executable name is megatools.exe. If it is on PATH, you can leave that value.</p>
+<button id="save" class="primary">Save settings</button><p id="message" class="hint"></p>
+</section></main><script src="options.js"></script></body></html>

@@ -1,0 +1,9 @@
+﻿{
+    "path":  "C:\\Users\\YOUR_USERNAME\\AppData\\Local\\MegaMediaDownloader\\MegaMediaNativeHost.exe",
+    "description":  "MEGA Media Downloader native host",
+    "name":  "com.megamediadownloader.host",
+    "allowed_origins":  [
+                            "chrome-extension://YOUR_EXTENSION_ID/"
+                        ],
+    "type":  "stdio"
+}

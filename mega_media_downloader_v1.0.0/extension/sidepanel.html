@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEGA Media Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">M</div>
+      <div><h1>MEGA Media Downloader</h1><p>Powered by megatools</p></div>
+    </div>
+    <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings" type="button">⚙</button>
+  </header>
+  <main>
+    <section class="panel">
+      <label for="megaLink">MEGA file or folder link</label>
+      <textarea id="megaLink" rows="3" placeholder="https://mega.nz/file/..."></textarea>
+      <div class="two">
+        <div><label for="category">Save as</label><select id="category"><option value="movies">Movies</option><option value="tv">TV Shows</option><option value="custom">Custom</option></select></div>
+        <div><label for="target">Destination</label><select id="target"><option value="windows">Windows PC</option><option value="nas">Synology NAS (SMB)</option></select></div>
+      </div>
+      <div id="customWrap" hidden><label for="customPath">Custom folder path</label><input id="customPath" placeholder="D:\Media\Incoming"></div>
+      <div id="pathPreview" class="path-preview">Destination: not configured</div>
+      <button id="addBtn" class="primary" type="button">Download Link</button>
+      <button id="browseBtn" class="quiet" type="button">Browse Folder &amp; Select Files</button>
+      <p class="hint">Only download content you have permission to access.</p>
+    </section>
+
+    <section id="folderPicker" class="panel" hidden>
+      <div class="section-title"><h2>MEGA Folder Contents</h2><button id="closePickerBtn" class="quiet small-btn" type="button">Close</button></div>
+      <p class="hint">Select individual files or folders. Original subfolders will be preserved.</p>
+      <div id="folderStatus" class="muted" role="status">Paste a MEGA folder link above, then choose Browse.</div>
+      <label class="select-all"><input type="checkbox" id="selectAllFiles"> Select all files</label>
+      <div id="fileList" class="file-list"></div>
+      <button id="downloadSelectedBtn" class="primary" type="button" disabled>Download Selected Files</button>
+    </section>
+
+    <section class="queue-head">
+      <div><h2>Download queue</h2><span id="queueCount" class="muted">0 jobs</span></div>
+      <button id="refreshBtn" class="quiet" type="button">Refresh</button>
+      <button id="clearHistoryBtn" class="quiet" type="button">Clear History</button>
+    </section>
+    <div id="connection" class="connection"><span class="dot"></span><span>Connecting to native helper…</span></div>
+    <section id="queue" class="queue"><div class="empty">Your queue is empty.</div></section>
+  </main>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
