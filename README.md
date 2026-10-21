@@ -30,6 +30,7 @@ Manage downloads from your browser with a built-in queue, progress tracking, des
 
 Before installing, make sure you have:
 
+- Megatools from xff
 - Google Chrome on Windows.
 - Windows access to your desired download destinations.
 - The MEGA Media Downloader release ZIP.
@@ -81,12 +82,44 @@ The filenames and folder structure above are illustrative. Use the actual struct
 4. Click **Load unpacked**.
 5. Select the extracted extension folder containing `manifest.json`.
 6. Confirm that MEGA Media Downloader appears in your extensions list.
+7. Open Extension settings
+8. Set Megatools Path to megatools executable ex C:\Megatools\megatools.exe
+9. You can also set your destination paths while you're here
+10. Click Save
 
 Keep the extension folder in a permanent location. Moving or deleting it may prevent Chrome from loading it.
 
 ### Step 3: Register the native host
 
-The native host allows the Chrome extension to communicate with the Windows downloader executable.
+### Why Do I Need to Run the Registration Script?
+
+MEGA Media Downloader has two parts:
+
+- **The Chrome extension:** The part you see and interact with in your browser.
+- **The Windows downloader:** A separate program that actually handles downloading files from MEGA to your computer or NAS.
+
+Chrome extensions normally run in a restricted environment, so they cannot simply launch any Windows program on their own.
+
+**The registration script connects these two parts.**
+
+When you run the registration script, it automatically tells Windows and Chrome where to find the downloader program and how the extension is allowed to communicate with it.
+
+#### What Does the Script Do?
+
+1. **Finds the Downloader:** Configures the location of `MegaMediaNativeHost.exe`.
+2. **Registers the native host:** Adds the required configuration to Windows so Chrome can locate and launch the downloader.
+3. **Connects the extension:** Associates the native host with the installed Chrome extension using its extension ID.
+4. **Enables downloads:** Allows the extension to send download requests and receive status updates from the Windows program.
+
+#### Do I Need to Run It Every Time?
+
+No! You normally run the registration script just once after installing the extension.
+
+You may need to run it again if you move the downloader executable, reinstall the extension with a different extension ID, or change its installation location.
+
+**Important:** Install the Chrome extension first, then run the registration script as instructed. Keep the downloaded extension files in their original folder structure so the extension can continue finding the downloader.
+
+Once registration is complete, open the extension, configure your download destinations, and start downloading supported MEGA links.
 
 1. Open the extracted project folder.
 2. Locate the included registration script, such as `register-host.ps1`.
@@ -119,10 +152,10 @@ Open MEGA Media Downloader and navigate to Settings.
 
 Configure the destinations you want to use:
 
-- **Movies — Windows:** Your local movie download folder.
-- **TV Shows — Windows:** Your local TV download folder.
-- **Movies — NAS:** Your movie destination on the Synology NAS.
-- **TV Shows — NAS:** Your TV destination on the Synology NAS.
+- **Movies - Windows:** Your local movie download folder.
+- **TV Shows - Windows:** Your local TV download folder.
+- **Movies - NAS:** Your movie destination on the Synology NAS.
+- **TV Shows - NAS:** Your TV destination on the Synology NAS.
 
 Example Windows destinations:
 
